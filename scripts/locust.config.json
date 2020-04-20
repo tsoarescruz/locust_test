@@ -1,0 +1,4 @@
+{
+  "target": "https://beta-apis-globoplay.globo.com/mve-api/globo-play-beta",
+  "locusts": ["BasicTasks"]
+}
