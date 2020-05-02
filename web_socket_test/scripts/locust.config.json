@@ -1,0 +1,4 @@
+{
+  "target": "qa1-api-events.globosat.tv.br",
+  "locusts": ["WSUser"]
+}

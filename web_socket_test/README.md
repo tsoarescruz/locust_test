@@ -1,14 +1,16 @@
-# Locustio
+Locustio
 
 ## Instalação
 
-Siga as instruções em: http://docs.locust.io/en/latest/installation.html
+`http://docs.locust.io/en/latest/installation.html`
 
-Executar:
+## Executar com Docker 
 
-`$ pip install -r requirements.txt`
+`$ docker-compose up --scale locust-worker=1`
 
 ## Execução
+
+`$ pip install -r requirements.txt`
 
 ### Unitário
 
@@ -32,4 +34,5 @@ Executar:
 [2017-09-08 11:56:20,948] Ares.local/INFO/stdout: Sending Data: {'identifier': '{"channel":"NextDaysChannel","event_id":3}', 'command': 'subscribe'}
 [2017-09-08 11:56:20,948] Ares.local/INFO/stdout: 
 [2017-09-08 11:56:20,949] Ares.local/INFO/stdout: Sending Data: {'identifier': '{"channel":"MediaChannel","day_id":3}', 'command': 'subscribe'}
+
 ```

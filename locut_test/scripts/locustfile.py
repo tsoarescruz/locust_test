@@ -1,7 +1,8 @@
-from locust import HttpLocust, TaskSet, task, between
+from locust import HttpLocust, TaskSet, task
 from locust.log import setup_logging
-from locust.contrib.fasthttp import FastHttpLocust
+# from locust.contrib.fasthttp import FastHttpLocust
 import requests
+
 class PublicTaskSet(TaskSet):
     @task(1)
     def alternativa(self):
@@ -18,6 +19,7 @@ class WebsiteTasks(TaskSet):
         PublicTaskSet: 20,
         PrivateTaskSet: 10,
     }
-class BasicTasks(FastHttpLocust):
+class BasicTasks(HttpLocust):
     task_set = WebsiteTasks
-    wait_time = between(0.1, 1)
+    min_wait = 5000
+    max_wait = 10000

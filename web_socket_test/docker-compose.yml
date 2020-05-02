@@ -1,13 +1,15 @@
 version: "3"
 services:
-  locust-master:
-    image: swernst/locusts
+  locust-master: &app_base
+    # image: swernst/locusts
+    build: .
     volumes:
       - ./scripts:/scripts
     ports:
-      - "8089:8089"
-  locust-worker:
-    image: swernst/locusts 
+      - "8080:8089"
+
+  locust-worker: 
+    <<: *app_base
     command: "--master-host=locust-master"
     volumes:
       - ./scripts:/scripts
